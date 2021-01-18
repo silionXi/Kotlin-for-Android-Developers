@@ -37,6 +37,17 @@ class ForecastListAdapter(private val weekForecast: ForecastList,
                 itemView.description.text = description
                 itemView.maxTemperature.text = "${high}º"
                 itemView.minTemperature.text = "${low}º"
+                /** kotlin-for-android-developers-zh P75
+                itemView.setOnClickListener(object : View.OnClickListener {
+                    override fun onClick(v: View?) {
+                        itemClick(forecast);
+                    }
+
+                })
+                itemView.setOnClickListener({ v -> itemClick(this) })
+                itemView.setOnClickListener({ itemClick(this) })
+                itemView.setOnClickListener(){ itemClick(this) }
+                */
                 itemView.setOnClickListener { itemClick(this) }
             }
         }

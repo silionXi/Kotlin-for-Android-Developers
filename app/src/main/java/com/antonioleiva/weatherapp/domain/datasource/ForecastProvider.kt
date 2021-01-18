@@ -18,6 +18,11 @@ class ForecastProvider(private val sources: List<ForecastDataSource> = ForecastP
         if (res != null && res.size >= days) res else null
     }
 
+    /*fun requestByZipCode(zipCode: Long, days: Int): ForecastList = requestToSources({
+        val res = it.requestForecastByZipCode(zipCode, todayTimeSpan())
+        if (res != null && res.size >= days) res else null
+    })*/
+
     fun requestForecast(id: Long): Forecast = requestToSources { it.requestDayForecast(id) }
 
     private fun todayTimeSpan() = System.currentTimeMillis() / DAY_IN_MILLIS * DAY_IN_MILLIS

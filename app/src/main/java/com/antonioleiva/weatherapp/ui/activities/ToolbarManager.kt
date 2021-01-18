@@ -30,6 +30,23 @@ interface ToolbarManager {
             }
             true
         }
+        /*toolbar.setOnMenuItemClickListener {menuItem ->
+            when (menuItem.itemId) {
+                R.id.action_settings -> toolbar.ctx.startActivity<SettingsActivity>()
+                else -> App.instance.toast("Unknown option")
+            }
+            true
+        }*/
+        /*toolbar.setOnMenuItemClickListener(object : Toolbar.OnMenuItemClickListener {
+            override fun onMenuItemClick(item: MenuItem?): Boolean {
+                when (item?.itemId) {
+                    R.id.action_settings -> toolbar.ctx.startActivity<SettingsActivity>()
+                    else -> App.instance.toast("Unknown option")
+                }
+                // true 报错
+                return true
+            }
+        })*/
     }
 
     fun enableHomeAsUp(up: () -> Unit) {
